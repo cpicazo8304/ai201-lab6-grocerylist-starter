@@ -34,14 +34,20 @@ def get_list_stats(list_id: str) -> dict:
     """
     items = Item.query.filter_by(list_id=list_id).all()
 
+    # fix #2
+    if not items:
+        raise ValueError(f"Grocery list {list_id!r} not found or has no items")
+
     total = len(items)
     purchased = sum(1 for item in items if item.is_purchased)
     remaining = total - purchased
 
     by_category = {}
     for item in items:
-        cat = item.category or "uncategorized"
-        by_category[cat] = by_category.get(cat, 0) + 1
+        # fix #1: only count unpurchased items in the category breakdown
+        if item and not item.is_purchased:
+            cat = item.category or "uncategorized"
+            by_category[cat] = by_category.get(cat, 0) + 1
 
     return {
         "list_id": list_id,
@@ -59,5 +65,8 @@ def get_list_stats(list_id: str) -> dict:
 @lists_bp.route("/<list_id>/stats", methods=["GET"])
 def list_stats(list_id):
     """Return summary statistics for a grocery list."""
-    stats = list_service.get_list_stats(list_id)
-    return jsonify(stats), 200
+    try:
+        stats = list_service.get_list_stats(list_id)
+        return jsonify(stats), 200
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 404

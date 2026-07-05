@@ -55,3 +55,22 @@ Primary key: id
 # Second PR
 
 - Wants to get stats of the grocery list (how many purchased, total, left)
+
+# Milestone 2 (what does the app do already)
+
+## Leo's purchase in Weekly List
+  {
+    "added_at": "2026-07-04T21:59:05.513573",
+    "added_by": "0bc7458e-04b7-4fb2-85c5-038b96d22bce",
+    "category": "pantry",
+    "id": "fccd1fb3-271c-4774-a2cf-c9d2c36478be",
+    "is_purchased": true,
+    "list_id": "4507062d-d6ac-4d73-b2a9-e555b3a2e1de",
+    "name": "Olive Oil",
+    "purchased_at": "2026-07-05T00:29:05.513573",
+    "purchased_by": "0bc7458e-04b7-4fb2-85c5-038b96d22bce",
+    "quantity": 1.0,
+    "unit": "bottle"
+  }
+
+# Milestone 3

@@ -73,4 +73,6 @@ Primary key: id
     "unit": "bottle"
   }
 
-# Milestone 3
+# Estimate the blast radius Analysis (optional challenge)
+
+There wouldn't be any accountable buyer for the items. Anyone who uses the list would see misleading data, especially the list own and other collaborators (if any). Downstream features that could be affected is analytics by buyer, "who bought what" history, or any filters for when you want to see what you yourself bought. 

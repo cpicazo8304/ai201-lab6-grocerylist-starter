@@ -9,7 +9,7 @@ Fill this in as you work through the milestones. Each section mirrors the struct
 ### Summary
 *What does this PR do? (1–2 sentences in your own words)*
 
->
+> The PR adds a function that marks every item in the grocery list as purchased. This is a POST request.
 
 ### Issues
 
@@ -54,7 +54,7 @@ For each issue you find, note: where it is (file + function), what's wrong, and 
 ### Summary
 *What does this PR do? (1–2 sentences in your own words)*
 
->
+> Adds a function that gets the stats of a grocery list (how many purchased, total, left to be purchased, items per category). 
 
 ### Issues
 
